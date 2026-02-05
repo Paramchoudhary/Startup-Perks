@@ -68,8 +68,7 @@ const config: Config = {
         "brutal-xl": "8px 8px 0px 0px rgba(0,0,0,1)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
     },
   },
