@@ -1,0 +1,59 @@
+// app/layout.tsx
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Startup Perks Database | Free Credits & Discounts for Startups",
+  description:
+    "Discover $1M+ in free cloud credits, AI API access, developer tools, and startup perks. A comprehensive directory of non-dilutive funding for early-stage companies.",
+  keywords: [
+    "startup credits",
+    "cloud credits",
+    "AWS credits",
+    "Google Cloud credits",
+    "startup perks",
+    "free software startups",
+    "non-dilutive funding",
+  ],
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Startup Perks Database",
+    description: "Discover $1M+ in free credits and perks for startups",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased min-h-screen flex flex-col`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,120 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 50 100% 95%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 48 96% 53%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 330 81% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 45 30% 90%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 48 96% 53%;
+    --radius: 0px;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 48 96% 53%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 330 81% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 48 96% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Neo-brutalism custom utilities */
+@layer utilities {
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  }
+  
+  .brutal-shadow-sm {
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+  
+  .brutal-shadow-lg {
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+  }
+  
+  .brutal-shadow-xl {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  }
+  
+  .dark .brutal-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1);
+  }
+  
+  .dark .brutal-shadow-sm {
+    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 1);
+  }
+  
+  .dark .brutal-shadow-lg {
+    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 1);
+  }
+  
+  .dark .brutal-shadow-xl {
+    box-shadow: 8px 8px 0px 0px rgba(255, 255, 255, 1);
+  }
+}
+
+/* Animation for hover effects */
+@layer utilities {
+  .brutal-hover {
+    @apply transition-all duration-150;
+  }
+  
+  .brutal-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+  }
+  
+  .dark .brutal-hover:hover {
+    box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 1);
+  }
+  
+  .brutal-hover:active {
+    transform: translate(0px, 0px);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+  
+  .dark .brutal-hover:active {
+    box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 1);
+  }
+}
