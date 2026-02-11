@@ -49,6 +49,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}
       >
+            <Script
+  id="datafucked-tracker"
+  src="https://datafucked.vercel.app/analytics.js"
+  strategy="afterInteractive"
+  data-site-id="startupperks.xyz"
+  data-endpoint="https://datafucked.vercel.app/api/e"
+/>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -59,13 +66,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
-        <Script
-  id="datafucked-tracker"
-  src="https://datafucked.vercel.app/analytics.js"
-  strategy="afterInteractive"
-  data-site-id="startupperks.xyz"
-  data-endpoint="https://datafucked.vercel.app/api/e"
-/>
+    
       </body>
     </html>
   );
