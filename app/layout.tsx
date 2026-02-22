@@ -48,12 +48,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <GoogleAnalytics />
-        <Script
-          id="adsense-script"
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3664577309845234"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
       </head>
       <body
