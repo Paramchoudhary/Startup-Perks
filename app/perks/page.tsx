@@ -5,6 +5,7 @@ import { startupPerks, type PerkCategory } from "@/src/data/startup-perks";
 import { extractCreditValue } from "@/src/lib/utils";
 import { SearchFilter } from "@/components/SearchFilter";
 import { PerkCard } from "@/components/PerkCard";
+import { BannerAd, InFeedAd } from "@/components/AdSense";
 
 export const metadata: Metadata = {
   title: "Browse All Perks | Startup Perks Database",
@@ -96,6 +97,11 @@ export default async function PerksPage({ searchParams }: PageProps) {
           </Suspense>
         </div>
 
+        {/* Ad: Top of listing */}
+        <div className="mb-6">
+          <BannerAd slot="PERKS_TOP_BANNER_SLOT" />
+        </div>
+
         {/* Results Count */}
         <div className="mb-6 flex items-center justify-between">
           <p className="font-bold">
@@ -107,11 +113,21 @@ export default async function PerksPage({ searchParams }: PageProps) {
           </p>
         </div>
 
-        {/* Perks Grid */}
+        {/* Perks Grid with In-Feed Ads */}
         {filteredPerks.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredPerks.map((perk) => (
-              <PerkCard key={perk.id} perk={perk} />
+            {filteredPerks.map((perk, index) => (
+              <>
+                <PerkCard key={perk.id} perk={perk} />
+                {(index + 1) % 8 === 0 && index < filteredPerks.length - 1 && (
+                  <div
+                    key={`ad-${index}`}
+                    className="col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4"
+                  >
+                    <InFeedAd slot="PERKS_INFEED_SLOT" />
+                  </div>
+                )}
+              </>
             ))}
           </div>
         ) : (

@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles, Rocket, Zap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FeaturedGrid } from "@/components/FeaturedGrid";
 import { StatsSection } from "@/components/StatsSection";
+import { BannerAd, MultiplexAd } from "@/components/AdSense";
 
 export default function HomePage() {
   return (
@@ -67,6 +68,11 @@ export default function HomePage() {
       {/* Stats Section */}
       <StatsSection />
 
+      {/* Ad: Below hero/stats */}
+      <div className="container mx-auto px-4 py-6">
+        <BannerAd slot="HERO_BANNER_SLOT" />
+      </div>
+
       {/* Featured Perks Grid */}
       <FeaturedGrid />
 
@@ -89,6 +95,11 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Ad: Between CTA and categories */}
+      <div className="container mx-auto px-4 py-6">
+        <MultiplexAd slot="HOME_MULTIPLEX_SLOT" />
+      </div>
 
       {/* Categories Preview */}
       <section className="py-20 px-4">

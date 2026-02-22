@@ -118,3 +118,24 @@
     box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 1);
   }
 }
+
+/* AdSense ad containers */
+.ad-container {
+  min-height: 50px;
+  overflow: hidden;
+}
+
+.ad-container ins.adsbygoogle {
+  background: transparent;
+}
+
+.ad-container ins.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .ad-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
